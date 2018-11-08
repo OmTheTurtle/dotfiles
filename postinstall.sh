@@ -38,8 +38,8 @@ sudo apt-get update
 # 4. Install Spotify
 sudo apt-get install -y spotify-client
 
-################################
-## Get dotfiles and copy them ##
-################################
+###########################
+## Copy dotfiles to home ##
+###########################
 
-# TODO
+cp dotfiles/* ~ 
