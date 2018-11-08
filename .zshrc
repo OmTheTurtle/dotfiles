@@ -64,9 +64,6 @@ HIST_STAMPS="yyyy-mm-dd"
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
   git
-  asdf
-  ruby
-  rails
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -102,9 +99,5 @@ source $ZSH/oh-my-zsh.sh
 
 alias meg='ssh jani@meg.sch.bme.hu'
 alias brian='ssh jani@brian.sch.bme.hu'
-
-if [ $TILIX_ID ] || [ $VTE_VERSION ]; then
-        source /etc/profile.d/vte.sh
-fi
 
 eval $(thefuck --alias)
