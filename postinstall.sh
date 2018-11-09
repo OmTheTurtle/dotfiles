@@ -17,7 +17,7 @@ mkdir ~/Programs
 #######################
 
 # Install packages from apt
-sudo apt install -y gedit vim htop gtk-redshift rofi virt-manager htop
+sudo apt install -y gedit vim htop gtk-redshift rofi virt-manager htop fonts-firacode
 
 # Install zsh
 apt install zsh
@@ -42,4 +42,5 @@ sudo apt-get install -y spotify-client
 ## Copy dotfiles to home ##
 ###########################
 
-cp dotfiles/* ~ 
+cp dotfiles/* ~
+ 
