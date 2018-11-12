@@ -43,4 +43,5 @@ sudo apt-get install -y spotify-client
 ###########################
 
 cp dotfiles/* ~
- 
+cp art ~ 
+
