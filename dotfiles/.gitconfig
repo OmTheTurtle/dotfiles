@@ -1,0 +1,16 @@
+[user]
+	email = feherjani96@gmail.com
+	name = Janos Feher
+[alias]
+	br = branch
+	co = checkout
+	ci = commit
+	st = status
+	loo = log --oneline
+	ps = push
+	psf = push --force
+	pu = pull
+	pur = pull --rebase
+	rb = rebase
+[pager]
+	branch = false
