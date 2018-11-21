@@ -45,3 +45,8 @@ sudo apt-get install -y spotify-client
 cp dotfiles/* ~
 cp art ~ 
 
+##########################
+## Copy oh-my-zsh theme ##
+##########################
+
+cp wired.zsh-theme ~/.oh-my-zsh/themes/

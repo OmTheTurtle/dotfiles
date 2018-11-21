@@ -64,6 +64,7 @@ HIST_STAMPS="yyyy-mm-dd"
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
   git
+  virtualenv
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -100,11 +101,24 @@ source $ZSH/oh-my-zsh.sh
 # Welcome message
 cat ~/art
 
+## aliases
+
+# SSH aliases
 alias meg='ssh jani@meg.sch.bme.hu'
 alias brian='ssh jani@brian.sch.bme.hu'
+
+alias netfix='sudo ethtool -s enp0s31f6 autoneg on'
+
+# alias for virtualenv
+alias tm3="source /home/johnny/workspace/temalab/bin/activate"
 
 eval $(thefuck --alias)
 
 . $HOME/.asdf/asdf.sh
 
 . $HOME/.asdf/completions/asdf.bash
+
+
+function virtualenv_info { 
+ [ $VIRTUAL_ENV ] && echo '('`basename $VIRTUAL_ENV`') '
+}
