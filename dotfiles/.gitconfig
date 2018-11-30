@@ -3,8 +3,9 @@
 	name = Janos Feher
 [alias]
 	br = branch
-	co = checkout
-	ci = commit
+	ch = checkout
+  chb = checkout -b
+	co = commit
 	st = status
 	loo = log --oneline
 	ps = push
@@ -12,5 +13,7 @@
 	pu = pull
 	pur = pull --rebase
 	rb = rebase
+  com = commit -m
+  coa = commit --amend
 [pager]
 	branch = false
