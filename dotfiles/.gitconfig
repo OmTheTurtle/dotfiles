@@ -1,19 +1,21 @@
 [user]
 	email = feherjani96@gmail.com
-	name = Janos Feher
+	name = János Fehér
 [alias]
 	br = branch
 	ch = checkout
   chb = checkout -b
 	co = commit
 	st = status
-	loo = log --oneline
+	lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date-relative
 	ps = push
 	psf = push --force
 	pu = pull
 	pur = pull --rebase
 	rb = rebase
   com = commit -m
-  coa = commit --amend
+	amend = commit --amend
 [pager]
 	branch = false
+[core]
+	editor = vim
