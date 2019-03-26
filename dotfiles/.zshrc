@@ -8,7 +8,7 @@
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
-ZSH_THEME="bira"
+ZSH_THEME="wired"
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -109,9 +109,6 @@ alias brian='ssh jani@brian.sch.bme.hu'
 
 alias netfix='sudo ethtool -s enp0s31f6 autoneg on'
 
-# alias for virtualenv
-alias tm3="source /home/johnny/workspace/temalab/bin/activate"
-
 eval $(thefuck --alias)
 
 . $HOME/.asdf/asdf.sh
@@ -122,3 +119,9 @@ eval $(thefuck --alias)
 function virtualenv_info { 
  [ $VIRTUAL_ENV ] && echo '('`basename $VIRTUAL_ENV`') '
 }
+
+export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
+
+alias weather='curl wttr.in'
+
+export TERM=xterm-256color
