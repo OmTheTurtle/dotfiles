@@ -64,7 +64,6 @@ HIST_STAMPS="yyyy-mm-dd"
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
   git
-  virtualenv
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -115,9 +114,8 @@ eval $(thefuck --alias)
 
 . $HOME/.asdf/completions/asdf.bash
 
-
-function virtualenv_info { 
- [ $VIRTUAL_ENV ] && echo '('`basename $VIRTUAL_ENV`') '
+function virtualenv_info {
+ [ $VIRTUAL_ENV ] && echo '('`basename $VIRTUAL_ENV`')'
 }
 
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
@@ -125,3 +123,6 @@ export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 alias weather='curl wttr.in'
 
 export TERM=xterm-256color
+
+# Fix url query parameters escaping
+unsetopt nomatch
