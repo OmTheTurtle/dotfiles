@@ -97,10 +97,7 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-# Welcome message
-cat ~/art
-
-## aliases
+# aliases
 
 # SSH aliases
 alias meg='ssh jani@meg.sch.bme.hu'
@@ -126,3 +123,11 @@ export TERM=xterm-256color
 
 # Fix url query parameters escaping
 unsetopt nomatch
+
+export LD_LIBRARY_PATH=/home/johnny/Downloads/instantclient_18_5
+
+# TODO: delete this shit after the end of this semester (2019 spring)
+alias rapid='ssh sk8ai4@rapid.eik.bme.hu'
+
+export PATH=$PATH:/opt/jetbrains
+
