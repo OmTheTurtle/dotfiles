@@ -111,10 +111,6 @@ eval $(thefuck --alias)
 
 . $HOME/.asdf/completions/asdf.bash
 
-function virtualenv_info {
- [ $VIRTUAL_ENV ] && echo '('`basename $VIRTUAL_ENV`')'
-}
-
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 
 alias weather='curl wttr.in'
@@ -123,11 +119,6 @@ export TERM=xterm-256color
 
 # Fix url query parameters escaping
 unsetopt nomatch
-
-export LD_LIBRARY_PATH=/home/johnny/Downloads/instantclient_18_5
-
-# TODO: delete this shit after the end of this semester (2019 spring)
-alias rapid='ssh sk8ai4@rapid.eik.bme.hu'
 
 export PATH=$PATH:/opt/jetbrains
 
