@@ -21,9 +21,7 @@ else
 fi
 local git_branch='$(git_prompt_info)%{$reset_color%}'
 
-local virtual_env='%{$fg[yellow]%}$(virtualenv_info)%{$reset_color%}%'
-
-PROMPT="╭─${virtual_env} ${user_host} ${current_dir} ${rvm_ruby} ${git_branch} 
+PROMPT="╭─${user_host} ${current_dir} ${rvm_ruby} ${git_branch} 
 ╰─%B${user_symbol}%b "
 RPS1="%B${return_code}%b"
 
