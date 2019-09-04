@@ -100,8 +100,9 @@ source $ZSH/oh-my-zsh.sh
 # aliases
 
 # SSH aliases
-alias meg='ssh jani@meg.sch.bme.hu'
-alias brian='ssh jani@brian.sch.bme.hu'
+alias meg='ssh jani@meg.sch.bme.hu -4'
+alias brian='ssh jani@brian.sch.bme.hu -4'
+alias lois='ssh jani@lois.sch.bme.hu -p 35355 -4'
 
 alias netfix='sudo ethtool -s enp0s31f6 autoneg on'
 
