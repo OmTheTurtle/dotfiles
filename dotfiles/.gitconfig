@@ -7,7 +7,8 @@
   chb = checkout -b
 	co = commit
 	st = status
-	lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date-relative
+  lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
+  lgo = log --oneline
 	ps = push
 	psf = push --force
 	pu = pull
@@ -15,6 +16,7 @@
 	rb = rebase
   com = commit -m
 	amend = commit --amend
+	aa = add --all
 [pager]
 	branch = false
 [core]
