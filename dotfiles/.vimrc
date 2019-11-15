@@ -1,15 +1,15 @@
-set number relativenumber
+set nu rnu          " use relative numbers
 syntax enable	      " enable syntax processing
 set tabstop=2       " number of visual spaces per TAB
 set softtabstop=2   " number of spaces in tab when editing
 set expandtab       " tabs are spaces
 set showcmd         " show command in bottom bar
 set lazyredraw      " redraw only when we need to.
-colorscheme desert  " use the desert color theme
+colorscheme desert
 set laststatus=2    " fix statusbar
-set noshowmode      " get rid of -- INSERT --
+set noshowmode      " get rid of default -- INSERT --
 
-"Plugins
+" Plugins
 
 if empty(glob('~/.vim/autoload/plug.vim'))
   silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
