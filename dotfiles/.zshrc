@@ -66,6 +66,7 @@ plugins=(
   git
   docker
   docker-compose
+  zsh-syntax-highlighting
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -106,9 +107,12 @@ alias meg='ssh jani@meg.sch.bme.hu -4'
 alias brian='ssh jani@brian.sch.bme.hu -4'
 alias lois='ssh jani@lois.sch.bme.hu -p 35355 -4'
 
-alias netfix='sudo ethtool -s enp0s31f6 autoneg on'
+# alias netfix='sudo ethtool -s enp0s31f6 autoneg on'
 
 alias wtr='curl wttr.in'
+alias ..='cd ..'
+
+alias gimp='flatpak run org.gimp.GIMP'
 
 lfcd () {
     tmp="$(mktemp)"
@@ -132,4 +136,3 @@ export TERM=xterm-256color
 
 # Fix url query parameters escaping
 unsetopt nomatch
-
