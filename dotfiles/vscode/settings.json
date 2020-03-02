@@ -1,0 +1,54 @@
+{
+    "editor.fontFamily": "Fira Code",
+    "editor.fontLigatures": true,
+    "nightswitch.themeDay": "Atom One Light",
+    "nightswitch.themeNight": "Ayu Mirage Bordered",
+    "nightswitch.location": "46,16",
+    "editor.tabSize": 2,
+    "window.zoomLevel": 0,
+    "terminal.integrated.rendererType": "dom",
+    "eslint.packageManager": "yarn",
+    "workbench.sideBar.location": "right",
+    "telemetry.enableCrashReporter": false,
+    "telemetry.enableTelemetry": false,
+    "window.menuBarVisibility": "toggle",
+    "workbench.colorTheme": "Ayu Mirage Bordered",
+    "files.trimTrailingWhitespace": true,
+    "editor.renderWhitespace": "boundary",
+    "eslint.alwaysShowStatus": true,
+    "[javascript]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[json]": {
+        "editor.defaultFormatter": "vscode.json-language-features"
+    },
+    "[html]": {
+        "editor.suggest.insertMode": "replace",
+        "editor.defaultFormatter": "vscode.html-language-features"
+    },
+    "workbench.editor.highlightModifiedTabs": true,
+    "editor.cursorStyle": "line-thin",
+    "editor.multiCursorModifier": "ctrlCmd",
+    "editor.mouseWheelZoom": false,
+    "editor.renderLineHighlight": "gutter",
+    "editor.formatOnPaste": true,
+    "markdown-pdf.displayHeaderFooter": false,
+    "diffEditor.ignoreTrimWhitespace": false,
+    "editor.suggestSelection": "first",
+    "files.exclude": {
+        "**/.classpath": true,
+        "**/.project": true,
+        "**/.settings": true,
+        "**/.factorypath": true
+    },
+    "svelte.language-server.runtime": "/usr/local/bin/node",
+    "[typescriptreact]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[typescript]": {
+        "editor.defaultFormatter": "vscode.typescript-language-features"
+    },
+    "workbench.iconTheme": "material-icon-theme",
+    "editor.defaultFormatter": "vscode.typescript-language-features",
+    "editor.formatOnSave": true
+}
