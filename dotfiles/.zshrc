@@ -64,8 +64,6 @@ HIST_STAMPS="yyyy-mm-dd"
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
   git
-  docker
-  docker-compose
   zsh-syntax-highlighting
 )
 
@@ -73,7 +71,7 @@ source $ZSH/oh-my-zsh.sh
 
 # User configuration
 
-# export MANPATH="/usr/local/man:$MANPATH"
+# exportuMANPATH="/usr/local/man:$MANPATH"
 
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
@@ -115,6 +113,8 @@ alias mov='lf ~/Videos/Movies'
 alias ser='lf ~/Videos/Series'
 
 alias gimp='flatpak run org.gimp.GIMP'
+alias lzg='lazygit'
+alias lsh='zsh --login'
 
 lfcd () {
     tmp="$(mktemp)"
@@ -135,7 +135,9 @@ export TERM=xterm-256color
 # Fix url query parameters escaping
 unsetopt nomatch
 
+
 # Syntax highlighting
 # source ./zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
-
+export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
