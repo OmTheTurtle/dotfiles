@@ -53,9 +53,9 @@ export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || pr
 source /home/johnny/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 fpath=($fpath "/home/johnny/.zfunctions")
 
-  # Set Spaceship ZSH as a prompt
-  autoload -U promptinit; promptinit
-  prompt spaceship
+# Set Spaceship ZSH as a prompt
+autoload -U promptinit; promptinit
+prompt spaceship
 
 SPACESHIP_PROMPT_ADD_NEWLINE=false
 
@@ -68,3 +68,4 @@ SPACESHIP_PROMPT_ORDER=(
   line_sep
   char
 )
+
