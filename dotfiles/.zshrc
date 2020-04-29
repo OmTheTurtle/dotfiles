@@ -1,4 +1,4 @@
-# aliases
+# Aliases
 
 # SSH aliases
 alias meg='ssh jani@meg.sch.bme.hu -4'
@@ -20,9 +20,14 @@ alias lg='lazygit'
 alias g='git'
 alias v='vim'
 
+# Colored `ls`
 export LS_OPTIONS='--color=auto'
 eval "$(dircolors -b)"
 alias ls='ls $LS_OPTIONS'
+
+cdp() {
+  cd "/home/$(whoami)/workspace/kir-dev/$1"
+}
 
 lfcd () {
     tmp="$(mktemp)"
@@ -43,14 +48,15 @@ export TERM=xterm-256color
 # Fix url query parameters escaping
 unsetopt nomatch
 
+# Ignore case in autocomplete
 zstyle ':completion:*' matcher-list '' 'm:{a-z}={A-Z}' '+m:{A-Z}={a-z}'
 
 # Syntax highlighting
-# source ./zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source ./zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
-source /home/johnny/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
 fpath=($fpath "/home/johnny/.zfunctions")
 
 # Set Spaceship ZSH as a prompt
@@ -65,6 +71,7 @@ SPACESHIP_PROMPT_ORDER=(
   dir
   git
   ruby
+  node
   line_sep
   char
 )
