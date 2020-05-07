@@ -2,7 +2,7 @@
 #
 # Please see http://i3wm.org/docs/userguide.html for a complete reference!
 
-# This defines which key super maps to on your keyboard.  
+# This defines which key super maps to on your keyboard.
 # Alt key is Mod1, and Windows key is Mod4
 set $mod Mod4
 
@@ -35,7 +35,7 @@ floating_modifier $mod
 hide_edge_borders smart
 
 # start a terminal
-bindsym $mod+Return exec /usr/bin/st
+bindsym $mod+Return exec /usr/bin/alacritty
 
 # start a web browser
 bindsym $mod+Shift+Return exec /usr/bin/sensible-browser
@@ -81,9 +81,6 @@ bindsym $mod+f fullscreen toggle
 # change gaps interactively
 bindsym $mod+minus gaps inner current minus 6
 bindsym $mod+plus gaps inner current plus 6
-
-# show/hide keybindings
-bindsym $mod+Shift+question exec --no-startup-id /usr/bin/conky-toggle.sh
 
 # toggle tiling / floating
 bindsym $mod+Shift+f floating toggle
@@ -217,7 +214,7 @@ set_from_resource $focused_inactive.color.border i3-wm.client.focused_inactive.c
 set_from_resource $focused_inactive.color.background i3-wm.client.focused_inactive.color.background "#073642"
 set_from_resource $focused_inactive.color.text i3-wm.client.focused_inactive.color.text "#839496"
 set_from_resource $focused_inactive.color.indicator i3-wm.client.focused_inactive.color.indicator "#073642"
-set_from_resource $focused_inactive.color.child_border i3-wm.client.focused_inactive.color.child_border 
+set_from_resource $focused_inactive.color.child_border i3-wm.client.focused_inactive.color.child_border
 
 set_from_resource $unfocused.color.border i3-wm.client.unfocused.color.border "#002b36"
 set_from_resource $unfocused.color.background i3-wm.client.unfocused.color.background "#073642"
@@ -267,46 +264,21 @@ set_from_resource $i3-wm.bar.workspace.urgent.text.color i3-wm.bar.workspace.urg
 
 set_from_resource $i3-wm.bar.font i3-wm.bar.font "pango:Source Code Pro Medium 13, FontAwesome 13"
 
-# Configure the bar
-#bar {
-#  font $i3-wm.bar.font
-#  separator_symbol " "
-#  status_command i3xrocks -c ~/.config/regolith/i3xrocks/config
-#  tray_output none
-#  strip_workspace_numbers yes
-#  position top
-
-#  colors {
-#      background $i3-wm.bar.background.color
-#      statusline $i3-wm.bar.statusline.color
-#      separator  $i3-wm.bar.separator.color
-
-#                        BORDER  BACKGROUND TEXT
-#      focused_workspace  $i3-wm.bar.workspace.focused.border.color      $i3-wm.bar.workspace.focused.background.color   $i3-wm.bar.workspace.focused.text.color
-#      active_workspace   $i3-wm.bar.workspace.active.border.color       $i3-wm.bar.workspace.active.background.color    $i3-wm.bar.workspace.active.text.color
-#      inactive_workspace $i3-wm.bar.workspace.inactive.border.color     $i3-wm.bar.workspace.inactive.background.color  $i3-wm.bar.workspace.inactive.text.color
-#      urgent_workspace   $i3-wm.bar.workspace.urgent.border.color       $i3-wm.bar.workspace.urgent.background.color    $i3-wm.bar.workspace.urgent.text.color
-#  }
-#}
-
 # Run programs when i3 starts
-
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 
 # Composite manager
 exec --no-startup-id compton -f --config /etc/xdg/compton.conf
 
-# Launch the shortcut Conky window on first login
-exec --no-startup-id /usr/bin/regolith-ftue.sh
-
 # Hide the mouse pointer if unused for a duration
 exec --no-startup-id /usr/bin/unclutter -b
 
 # Assign apps to specific workspaces
-for_window [class="Transmission-gtk"] move to workspace $ws14
-for_window [class="Steam"] move to workspace $ws13
+for_window [class="Transmission-gtk"] move to workspace $ws13
+for_window [class="Steam"] move to workspace $ws14
 for_window [class="Spotify"] move to workspace $ws12
 for_window [class="Slack"] move to workspace $ws11
 
 # Disable touchpad while typing
 exec --no-startup-id "syndaemon -i 0.3 -d"
+
