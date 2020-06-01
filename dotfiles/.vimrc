@@ -7,7 +7,7 @@ map <leader>c :setlocal formatoptions-=cro<CR>
 map <leader>C :setlocal formatoptions=cro<Cr>
 
 " Spellcheck (s to run)
-map <leader>s :setlocal spell! spellang=en_us<CR>
+map <leader>s :setlocal spell! spelllang=en_us<CR>
 
 " Enable / disable autoindent
 map <leader>i :setlocal autoindent<CR>
@@ -61,6 +61,7 @@ call plug#begin('~/.vim/plugged')
 Plug 'itchyny/lightline.vim'
 Plug 'itchyny/vim-gitbranch'
 Plug 'tpope/vim-commentary'
+Plug 'leafgarland/typescript-vim'
 
 call plug#end()
 
