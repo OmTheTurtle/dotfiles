@@ -5,7 +5,7 @@ alias meg='ssh jani@meg.sch.bme.hu -4'
 alias brian='ssh jani@brian.sch.bme.hu -4'
 alias lois='ssh jani@lois.sch.bme.hu -p 35355 -4'
 
-alias netfix='sudo ethtool -s enp0s31f6 autoneg on'
+# alias netfix='sudo ethtool -s enp0s31f6 autoneg on'
 
 alias ll='ls -lh'
 alias l='ls -lha'
@@ -15,10 +15,11 @@ alias ..='cd ..'
 alias mov='lf ~/Videos/Movies'
 alias ser='lf ~/Videos/Series'
 
-alias gimp='flatpak run org.gimp.GIMP'
 alias lg='lazygit'
 alias g='git'
 alias v='vim'
+alias rm='rm -I'
+alias dockerkill='docker stop $(docker ps -a -q)'
 
 # Colored `ls`
 export LS_OPTIONS='--color=auto'
@@ -42,6 +43,8 @@ bindkey -s '^o' 'lfcd\n'
 
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 export PATH=$PATH:/opt/jetbrains
+export DENO_INSTALL="/home/johnny/.deno"
+export PATH="$DENO_INSTALL/bin:$PATH"
 
 export TERM=xterm-256color
 
@@ -52,7 +55,7 @@ unsetopt nomatch
 zstyle ':completion:*' matcher-list '' 'm:{a-z}={A-Z}' '+m:{A-Z}={a-z}'
 
 # Syntax highlighting
-source ./zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source ~/zsh-syntax-highlighting/zsh-syntax-highlighting.plugin.zsh
 
 export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
