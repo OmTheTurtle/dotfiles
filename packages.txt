@@ -154,6 +154,7 @@ scrot
 smartmontools
 solid
 spaceship-prompt-git
+spotify
 sudo
 sysfsutils
 sysstat
@@ -163,6 +164,7 @@ thunar
 thunar-archive-plugin
 thunar-volman
 tlp
+transmission-gtk
 ttf-bitstream-vera
 ttf-caladea
 ttf-carlito
