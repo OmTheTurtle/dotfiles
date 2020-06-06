@@ -1,0 +1,6 @@
+brave-bin
+icaclient
+lf-bin
+nvm
+spaceship-prompt-git
+spotify
