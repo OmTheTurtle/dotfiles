@@ -2,7 +2,6 @@
 # source is available here:
 # https://raw.githubusercontent.com/endeavouros-team/i3-EndeavourOS/master/.config/i3/config
 # Maintainer: joekamprad [joekamprad@endeavouros.com]
-# created for i3wm setup on EndeavourOS
 # https://endeavouros.com
 #
 # --> to update this run the following command:
@@ -17,8 +16,8 @@ set $mod Mod4
 
 # workspace layouts:
 
-#workspace_layout default
-default i3 tiling mode
+workspace_layout default
+#default i3 tiling mode
 
 #workspace_layout stacking
 
@@ -50,23 +49,26 @@ hide_edge_borders both
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec alacritty
+bindsym $mod+Return exec xfce4-terminal
 
 # kill focused window
-bindsym $mod+Shift+q kill
+bindsym $mod+c kill
+
+# open keybindings overview
+bindsym $mod+F1 exec "leafpad ~/.config/i3/keybindings"
 
 # start dmenu (a program launcher)
-bindsym $mod+d exec dmenu_run
+# bindsym $mod+d exec dmenu_run
 # There also is the (new) i3-dmenu-desktop which only displays applications
 # shipping a .desktop file. It is a wrapper around dmenu, so you need that
 # installed.
-# bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
+bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
 
 # change focus
-bindsym $mod+h focus left
-bindsym $mod+j focus down
-bindsym $mod+k focus up
-bindsym $mod+l focus right
+bindsym $mod+j focus left
+bindsym $mod+k focus down
+bindsym $mod+u focus up
+bindsym $mod+ntilde focus right
 
 # alternatively, you can use the cursor keys:
 bindsym $mod+Left focus left
@@ -75,10 +77,10 @@ bindsym $mod+Up focus up
 bindsym $mod+Right focus right
 
 # move focused window
-bindsym $mod+Shift+h move left
-bindsym $mod+Shift+j move down
-bindsym $mod+Shift+k move up
-bindsym $mod+Shift+l move right
+bindsym $mod+Shift+j move left
+bindsym $mod+Shift+k move down
+bindsym $mod+Shift+l move up
+bindsym $mod+Shift+ntilde move right
 
 # alternatively, you can use the cursor keys:
 bindsym $mod+Shift+Left move left
@@ -87,7 +89,7 @@ bindsym $mod+Shift+Up move up
 bindsym $mod+Shift+Right move right
 
 # split in horizontal orientation
-# bindsym $mod+h split h
+bindsym $mod+h split h
 
 # split in vertical orientation
 bindsym $mod+v split v
@@ -96,15 +98,15 @@ bindsym $mod+v split v
 bindsym $mod+f fullscreen toggle
 
 # change container layout (stacked, tabbed, toggle split)
-# bindsym $mod+Shift+s layout stacking
-# bindsym $mod+Shift+w layout tabbed
-# bindsym $mod+Shift+e layout toggle split
+bindsym $mod+Shift+s layout stacking
+bindsym $mod+Shift+w layout tabbed
+bindsym $mod+Shift+e layout toggle split
 
 # toggle tiling / floating
-bindsym $mod+Shift+f floating toggle
+bindsym $mod+Shift+space floating toggle
 
 # change focus between tiling / floating windows
-# bindsym $mod+space focus mode_toggle
+bindsym $mod+space focus mode_toggle
 
 # focus the parent container
 bindsym $mod+a focus parent
@@ -113,96 +115,67 @@ bindsym $mod+a focus parent
 #bindsym $mod+d focus child
 
 #workspace-edit
-set $ws1 "1"
-set $ws2 "2"
-set $ws3 "3"
-set $ws4 "4"
-set $ws5 "5"
-set $ws6 "6"
-set $ws7 "7"
-set $ws8 "8"
-set $ws9 "9"
-set $ws10 "10"
-set $ws11 "11"
-set $ws11 "12"
-set $ws11 "13"
-set $ws11 "14"
-set $ws11 "15"
-set $ws11 "16"
-set $ws11 "17"
-set $ws11 "18"
-set $ws11 "19"
+set $ws2 "Terminals "
+set $ws3 "Browser "
+set $ws4 "Files "
 
 #autostart start applications
 #bind program to workspace
-# assign [class="Pcmanfm"] $ws4
+assign [class="Xfce4-terminal"] $ws2
+for_window [class=Xfce4-terminal] focus
+assign [class="(?i)firefox"] $ws3
+for_window [class=(?i)firefox] focus
+assign [class="Thunar"] $ws4
+for_window [class=Thunar] focus
 
 # Autostart apps
-exec --no-startup-id picom -cC
+exec --no-startup-id firefox
+exec --no-startup-id sleep 2 && xfce4-terminal -e "glances --percpu"
+exec --no-startup-id sleep 3 && thunar
+#transparency 
+exec --no-startup-id xcompmgr -c -f -n
+#exec --no-startup-id picom -cC
+#networkmanager-applet
 exec --no-startup-id nm-applet
 exec --no-startup-id nitrogen --restore
-#backup packages lists:
-exec pacman -Qqen > packages-repository.txt && pacman -Qqem > packages-AUR.txt
+
 #set powersavings for display:
 exec --no-startup-id xset s 480 dpms 600 600 600
+
 # Desktop notifications
 exec --no-startup-id /usr/bin/dunst
+exec --no-startup-id git clone https://github.com/endeavouros-team/i3-EndeavourOS.git ~/.config/i3/original/
+
 # update notification should be set to tray and notification
 exec --no-startup-id sleep 15 && eos-update-notifier
 exec --no-startup-id sleep 15 && eos-welcome
 
 # set floating for apps needing it
 for_window [class="Pavucontrol" instance="pavucontrol"] floating enable
-# welcome and others
+## welcome and others
 for_window [class="Yad" instance="yad"] floating enable
 for_window [class="Galculator" instance="galculator"] floating enable
 for_window [class="Blueberry.py" instance="blueberry.py"] floating enable
-for_window [class="Leafpad" instance="leafpad"] floating enable
+#for_window [class="Leafpad" instance="leafpad"] floating enable
+#for_window [class="Leafpad"] resize set 900 700
+
+
+
+#resize floating windows with mouse scroll:
+bindsym --whole-window --border $mod+button4 resize shrink height 5 px or 5 ppt
+bindsym --whole-window --border $mod+button5 resize grow height 5 px or 5 ppt
+bindsym --whole-window --border $mod+shift+button4 resize shrink width 5 px or 5 ppt
+bindsym --whole-window --border $mod+shift+button5 resize grow width 5 px or 5 ppt
 
 # switch to workspace
-bindsym $mod+1 workspace $ws1
 bindsym $mod+2 workspace $ws2
 bindsym $mod+3 workspace $ws3
-bindsym $mod+4 workspace $ws5
-bindsym $mod+5 workspace $ws6
-bindsym $mod+6 workspace $ws7
-bindsym $mod+7 workspace $ws8
-bindsym $mod+9 workspace $ws9
-bindsym $mod+10 workspace $ws10
-bindsym $mod+11 workspace $ws11
-bindsym $mod+12 workspace $ws12
-bindsym $mod+13 workspace $ws13
-bindsym $mod+14 workspace $ws14
-bindsym $mod+15 workspace $ws15
-bindsym $mod+16 workspace $ws16
-bindsym $mod+17 workspace $ws17
-bindsym $mod+18 workspace $ws18
-bindsym $mod+19 workspace $ws19
-
-# cycle between workspaces
-bindsym $mod+Tab workspace next
-bindsym $mod+Shift+Tab workspace prev
+bindsym $mod+4 workspace $ws4
 
 # move focused container to workspace
 bindsym $mod+Shift+1 move container to workspace $ws1
 bindsym $mod+Shift+2 move container to workspace $ws2
 bindsym $mod+Shift+3 move container to workspace $ws3
-bindsym $mod+Shift+4 move container to workspace $ws4
-bindsym $mod+Shift+5 move container to workspace $ws5
-bindsym $mod+Shift+6 move container to workspace $ws6
-bindsym $mod+Shift+7 move container to workspace $ws7
-bindsym $mod+Shift+8 move container to workspace $ws8
-bindsym $mod+Shift+9 move container to workspace $ws9
-bindsym $mod+Shift+0 move container to workspace $ws10
-bindsym $mod+Shift+11 move container to workspace $ws11
-bindsym $mod+Shift+12 move container to workspace $ws12
-bindsym $mod+Shift+13 move container to workspace $ws13
-bindsym $mod+Shift+14 move container to workspace $ws14
-bindsym $mod+Shift+15 move container to workspace $ws15
-bindsym $mod+Shift+16 move container to workspace $ws16
-bindsym $mod+Shift+17 move container to workspace $ws17
-bindsym $mod+Shift+18 move container to workspace $ws18
-bindsym $mod+Shift+19 move container to workspace $ws19
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
@@ -211,7 +184,7 @@ bindsym $mod+Shift+c reload
 bindsym $mod+Shift+r restart
 
 # exit i3 (logs you out of your X session)
-bindsym $mod+Shift+Ctrl+q exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
+bindsym $mod+Shift+q exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
 
 
 # resize window (you can also use the mouse for that)
@@ -222,10 +195,10 @@ mode "resize" {
         # Pressing right will grow the window’s width.
         # Pressing up will shrink the window’s height.
         # Pressing down will grow the window’s height.
-        bindsym h resize shrink width 10 px or 10 ppt
-        bindsym j resize grow height 10 px or 10 ppt
-        bindsym k resize shrink height 10 px or 10 ppt
-        bindsym l resize grow width 10 px or 10 ppt
+        bindsym j resize shrink width 10 px or 10 ppt
+        bindsym k resize grow height 10 px or 10 ppt
+        bindsym l resize shrink height 10 px or 10 ppt
+        bindsym ntilde resize grow width 10 px or 10 ppt
 
         # same bindings, but for the arrow keys
         bindsym Left resize shrink width 10 px or 10 ppt
@@ -260,7 +233,7 @@ client.urgent           $urgent-bg-color   $urgent-bg-color   $text-color       
 #bar {
 #	status_command i3status
 #	font pango:monospace 9
-#
+#        
 #	colors {
 #		background $bg-color
 #	    	separator #757575
@@ -275,8 +248,8 @@ client.urgent           $urgent-bg-color   $urgent-bg-color   $text-color       
 # finds out, if available)
 bar {
     status_command i3blocks -c ~/.config/i3/i3blocks.conf
-tray_output primary
-    position top
+tray_output primary 
+    position bottom
     tray_padding 0
     colors {
       separator          #666666
@@ -329,7 +302,7 @@ bindsym $mod+F8 exec mocp --next
 
 # App shortcuts
 bindsym $mod+w exec "/usr/bin/firefox"
-bindsym $mod+n exec "/usr/bin/pcmanfm"
+bindsym $mod+n exec "/usr/bin/thunar"
 bindsym Print exec "scrot ~/%Y-%m-%d-%T-screenshot.png"
 
 # Redirect sound to headphones
@@ -341,15 +314,25 @@ bindsym $mod+m exec "/usr/local/bin/switch-audio-port"
 #bindsym F12 exec rofi -show window -lines 7
 
 # Lock the system
-bindsym $mod+Escape exec i3lock -i ~/.config/i3/i3-lock-screen.png -t -f
+bindsym $mod+l exec i3lock -i ~/.config/i3/i3-lock-screen.png -t -f
 
 
 # rofi bindings fancy menu
-bindsym $mod+space exec rofi -modi drun -show drun -line-padding 4 \
+bindsym $mod+i exec rofi -modi drun -show drun -line-padding 4 \
+                -columns 2 -padding 50 -hide-scrollbar \
+                -show-icons -drun-icon-theme "Arc-X-D" -font "Droid Sans Regular 10"
+                
+bindsym F9 exec rofi -modi drun -show drun -line-padding 4 \
                 -columns 2 -padding 50 -hide-scrollbar \
                 -show-icons -drun-icon-theme "Arc-X-D" -font "Droid Sans Regular 10"
 
-bindsym $mod+Shift+space exec rofi -show window -line-padding 4 \
+bindsym $mod+o exec rofi -show window -line-padding 4 \
                 -lines 6 -padding 50 -hide-scrollbar \
                 -show-icons -drun-icon-theme "Arc-X-D" -font "Droid Sans Regular 10"
+
+bindsym F10 exec rofi -show window -line-padding 4 \
+                -lines 6 -padding 50 -hide-scrollbar \
+                -show-icons -drun-icon-theme "Arc-X-D" -font "Droid Sans Regular 10"                
+                
+
 
