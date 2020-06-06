@@ -41,26 +41,21 @@ lfcd () {
 }
 bindkey -s '^o' 'lfcd\n'
 
-export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
-export PATH=$PATH:/opt/jetbrains
-export DENO_INSTALL="/home/johnny/.deno"
-export PATH="$DENO_INSTALL/bin:$PATH"
-
 export TERM=xterm-256color
 
-# Fix url query parameters escaping
-unsetopt nomatch
+autoload -Uz compinit && compinit
 
 # Ignore case in autocomplete
-zstyle ':completion:*' matcher-list '' 'm:{a-z}={A-Z}' '+m:{A-Z}={a-z}'
+zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
 
 # Syntax highlighting
-source ~/zsh-syntax-highlighting/zsh-syntax-highlighting.plugin.zsh
+source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
-export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
-
-fpath=($fpath "/home/johnny/.zfunctions")
+# nvm
+[ -z "$NVM_DIR" ] && export NVM_DIR="$HOME/.config/.nvm"
+source /usr/share/nvm/nvm.sh --no-use
+source /usr/share/nvm/bash_completion
+source /usr/share/nvm/install-nvm-exec
 
 # Set Spaceship ZSH as a prompt
 autoload -U promptinit; promptinit
@@ -69,8 +64,6 @@ prompt spaceship
 SPACESHIP_PROMPT_ADD_NEWLINE=false
 
 SPACESHIP_PROMPT_ORDER=(
-  user
-  host
   dir
   git
   ruby
