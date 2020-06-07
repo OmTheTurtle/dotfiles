@@ -336,8 +336,8 @@ bindsym $mod+F7 exec mocp --previous
 bindsym $mod+F8 exec mocp --next
 
 # Screen brightness
-bindsym XF86MonBrightnessDown exec brightnessctl set 10%-
-bindsym XF86MonBrightnessUp exec brightnessctl set +10%
+bindsym XF86MonBrightnessDown exec brightnessctl set 5%-
+bindsym XF86MonBrightnessUp exec brightnessctl set +5%
 
 # App shortcuts
 bindsym $mod+w exec "/usr/bin/firefox"
@@ -372,6 +372,10 @@ bindsym $mod+Shift+space exec rofi -show window -line-padding 4 \
                 -show-icons -drun-icon-theme "Arc-X-D" -font "Droid Sans Regular 10"
 
 # send programs to dedicated workspaces
+for_window [class="Rambox"] move to workspace $ws11
 for_window [class="Spotify"] move to workspace $ws12
 for_window [class="Transmission-gtk"] move to workspace $ws13
+
+# autostart apps
+exec_always --no-startup-id redshiftgui
 
