@@ -377,5 +377,6 @@ for_window [class="Spotify"] move to workspace $ws12
 for_window [class="Transmission-gtk"] move to workspace $ws13
 
 # autostart apps
-exec_always --no-startup-id redshiftgui
+exec redshiftgui
+exec_always xcompmgr
 
