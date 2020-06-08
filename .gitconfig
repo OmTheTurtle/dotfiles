@@ -2,17 +2,19 @@
 	email = feherjani96@gmail.com
 	name = János Fehér
 [alias]
-	br = branch
-	ch = checkout
-  chb = checkout -b
+  br = branch
+  unstage = restore --staged
+  sw = switch
+  swc = switch -c
+	ch = "!echo Do not use checkout, consider switch and restore && git checkout"
 	co = commit
 	st = status
   lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
   lgo = log --oneline
 	ps = push
 	psf = push --force-with-lease
-	pu = pull
-	pur = pull --rebase
+	pl = pull
+	plr = pull --rebase
 	rb = rebase
   com = commit -m
 	amend = commit --amend
