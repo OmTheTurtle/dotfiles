@@ -301,6 +301,7 @@ for_window [class="Blueberry.py" instance="blueberry.py"] floating enable
 for_window [class="Bluetooth-sendto" instance="bluetooth-sendto"] floating enable
 for_window [class="Yad" instance="yad"] floating enable
 for_window [class="Pamac-manager"] floating enable
+for_window [class="redshiftgui"] floating enable
 
 # Multimedia Keys
 
@@ -319,21 +320,16 @@ bindsym XF86AudioMute exec "pactl set-sink-mute 0 toggle && pkill -RTMIN+1 i3blo
 # mute microphone
 bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute 1 toggle
 
-#bindsym XF86AudioPlay exec playerctl play
-#bindsym XF86AudioPause exec playerctl pause
-#bindsym XF86AudioNext exec playerctl next
-#bindsym XF86AudioPrev exec playerctl previous
+bindsym XF86AudioPlay exec playerctl play
+bindsym XF86AudioPause exec playerctl pause
+bindsym XF86AudioStop exec playerctl stop
+bindsym XF86AudioNext exec playerctl next
+bindsym XF86AudioPrev exec playerctl previous
 
-bindsym XF86AudioPlay exec mocp --toggle-pause
-bindsym XF86AudioPause exec mocp --toggle-pause
-bindsym XF86AudioStop exec mocp --togle-pause
-bindsym XF86AudioNext exec mocp --next
-bindsym XF86AudioPrev exec mocp --previous
-
-bindsym $mod+F5 exec mocp --toggle-pause
-bindsym $mod+F6 exec mocp --stop
-bindsym $mod+F7 exec mocp --previous
-bindsym $mod+F8 exec mocp --next
+bindsym $mod+F5 exec playerctl play-pause
+bindsym $mod+F6 exec playerctl stop
+bindsym $mod+F7 exec playerctl previous
+bindsym $mod+F8 exec playerctl next
 
 # Screen brightness
 bindsym XF86MonBrightnessDown exec brightnessctl set 5%-
