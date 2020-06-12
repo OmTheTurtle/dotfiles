@@ -13,7 +13,7 @@ alias l='ls -lha'
 alias wtr='curl wttr.in'
 alias ..='cd ..'
 alias mov='lf ~/Videos/Movies'
-alias ser='lf ~/Videos/Series'
+alias ser='lf ~/Videos/Shows'
 
 alias lg='lazygit'
 alias g='git'
@@ -27,7 +27,7 @@ eval "$(dircolors -b)"
 alias ls='ls $LS_OPTIONS'
 
 cdp() {
-  cd "/home/$(whoami)/workspace/kir-dev/$1"
+  cd "/home/$(whoami)/repos/kir-dev/$1"
 }
 
 lfcd () {
@@ -40,6 +40,16 @@ lfcd () {
     fi
 }
 bindkey -s '^o' 'lfcd\n'
+
+man() {
+    LESS_TERMCAP_md=$'\e[01;31m' \
+    LESS_TERMCAP_me=$'\e[0m' \
+    LESS_TERMCAP_se=$'\e[0m' \
+    LESS_TERMCAP_so=$'\e[01;44;33m' \
+    LESS_TERMCAP_ue=$'\e[0m' \
+    LESS_TERMCAP_us=$'\e[01;32m' \
+    command man "$@"
+}
 
 export TERM=xterm-256color
 
@@ -72,3 +82,6 @@ SPACESHIP_PROMPT_ORDER=(
   char
 )
 
+
+# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
+export PATH="$PATH:$HOME/.rvm/bin"
