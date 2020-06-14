@@ -14,9 +14,9 @@
 	ps = push
 	psf = push --force-with-lease
 	pl = pull
-	plr = pull --rebase
 	rb = rebase
   com = commit -m
+  cov = commit -v
 	amend = commit --amend
   sneak = commit --amend --no-edit
 	aa = add --all
@@ -24,3 +24,5 @@
 	branch = false
 [core]
 	editor = vim
+[pull]
+	rebase = true
