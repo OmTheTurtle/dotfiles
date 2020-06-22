@@ -1,8 +1,8 @@
 {
     "editor.fontFamily": "JetBrains Mono",
     "editor.fontLigatures": true,
-    "nightswitch.themeDay": "Community Material Theme High Contrast",
-    "nightswitch.themeNight": "Moonlight II",
+    "nightswitch.themeDay": "Noctis Lux",
+    "nightswitch.themeNight": "Noctis",
     "nightswitch.location": "46,16",
     "editor.tabSize": 2,
     "window.zoomLevel": 0,
@@ -12,7 +12,6 @@
     "telemetry.enableCrashReporter": false,
     "telemetry.enableTelemetry": false,
     "window.menuBarVisibility": "toggle",
-    "workbench.colorTheme": "Community Material Theme High Contrast",
     "files.trimTrailingWhitespace": true,
     "editor.renderWhitespace": "boundary",
     "eslint.alwaysShowStatus": true,
@@ -67,5 +66,5 @@
     "editor.smoothScrolling": true,
     "latex-workshop.view.pdf.viewer": "tab",
     "editor.formatOnSave": true,
-    "editor.fontSize": 15
+    "workbench.colorTheme": "Noctis"
 }
