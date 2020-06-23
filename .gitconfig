@@ -6,6 +6,7 @@
   unstage = restore --staged
   sw = switch
   swc = switch -c
+  swm = switch master
 	ch = "!echo Do not use checkout, consider switch and restore && git checkout"
 	co = commit
 	st = status
@@ -13,6 +14,7 @@
   lgo = log --oneline
 	ps = push
 	psf = push --force-with-lease
+  psu = push --set-upstream
 	pl = pull
 	rb = rebase
   com = commit -m
