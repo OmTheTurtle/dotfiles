@@ -301,7 +301,6 @@ for_window [class="Blueberry.py" instance="blueberry.py"] floating enable
 for_window [class="Bluetooth-sendto" instance="bluetooth-sendto"] floating enable
 for_window [class="Yad" instance="yad"] floating enable
 for_window [class="Pamac-manager"] floating enable
-for_window [class="redshiftgui"] floating enable
 
 # Multimedia Keys
 
@@ -338,7 +337,7 @@ bindsym XF86MonBrightnessUp exec brightnessctl set +5%
 # App shortcuts
 bindsym $mod+w exec "/usr/bin/firefox"
 bindsym $mod+n exec "/usr/bin/pcmanfm"
-bindsym Print exec "scrot ~/%Y-%m-%d-%T-screenshot.png"
+bindsym Print exec "scrot ~/Pictures/%Y-%m-%d-%T-screenshot.png"
 
 # Redirect sound to headphones
 bindsym $mod+m exec "/usr/local/bin/switch-audio-port"
@@ -351,8 +350,8 @@ bindsym $mod+m exec "/usr/local/bin/switch-audio-port"
 # Lock the system
 bindsym $mod+Escape exec i3lock -i ~/.config/i3/i3-lock-screen.png -t -f
 
-# Start Brave
-bindsym $mod+Shift+Return exec brave
+# Start Firefox
+bindsym $mod+Shift+Return exec firefox
 
 # Language hotkeys
 bindsym $mod+Ctrl+h exec setxkbmap hu
@@ -371,8 +370,8 @@ bindsym $mod+Shift+space exec rofi -show window -line-padding 4 \
 for_window [class="Rambox"] move to workspace $ws11
 for_window [class="Spotify"] move to workspace $ws12
 for_window [class="Transmission-gtk"] move to workspace $ws13
+for_window [class="Steam"] move to workspace $ws14
 
 # autostart apps
-exec redshiftgui
 exec_always xcompmgr
 
