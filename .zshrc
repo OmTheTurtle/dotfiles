@@ -20,6 +20,7 @@ alias g='git'
 alias v='vim'
 alias rm='rm -I'
 alias dockerkill='docker stop $(docker ps -a -q)'
+alias nd='nvm use default'
 
 # Colored `ls`
 export LS_OPTIONS='--color=auto'
@@ -82,6 +83,6 @@ SPACESHIP_PROMPT_ORDER=(
   char
 )
 
-
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
 export PATH="$PATH:$HOME/.rvm/bin"
+
