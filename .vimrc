@@ -62,6 +62,7 @@ Plug 'itchyny/lightline.vim'
 Plug 'itchyny/vim-gitbranch'
 Plug 'tpope/vim-commentary'
 Plug 'leafgarland/typescript-vim'
+Plug 'easymotion/vim-easymotion'
 
 call plug#end()
 
