@@ -2,7 +2,7 @@
     "editor.fontFamily": "JetBrains Mono",
     "editor.fontLigatures": true,
     "nightswitch.themeDay": "Noctis Lux",
-    "nightswitch.themeNight": "Noctis",
+    "nightswitch.themeNight": "SynthWave '84",
     "nightswitch.location": "46,16",
     "editor.tabSize": 2,
     "window.zoomLevel": 0,
@@ -34,7 +34,6 @@
     "editor.multiCursorModifier": "ctrlCmd",
     "editor.mouseWheelZoom": false,
     "editor.renderLineHighlight": "gutter",
-    "editor.formatOnPaste": true,
     "markdown-pdf.displayHeaderFooter": false,
     "diffEditor.ignoreTrimWhitespace": false,
     "editor.suggestSelection": "first",
@@ -65,6 +64,7 @@
     "terminal.integrated.shell.linux": "/usr/bin/zsh",
     "editor.smoothScrolling": true,
     "latex-workshop.view.pdf.viewer": "tab",
-    "editor.formatOnSave": true,
-    "workbench.colorTheme": "Noctis"
+    "workbench.colorTheme": "SynthWave '84",
+    "editor.formatOnPaste": true,
+    "editor.formatOnSave": true
 }
