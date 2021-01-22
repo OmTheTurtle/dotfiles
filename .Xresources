@@ -55,11 +55,11 @@ URxvt.scrollBar_right: false
 URxvt.urgentOnBell: true
 URxvt.depth: 24
 URxvt.iso14755: false
-URxvt.font: xft:JetBrains Mono:size=14
-URxvt.boldFont: xft:JetBrains Mono:bold:size=14
-URxvt.italicFont: xft:JetBrains Mono:italic:size=14
-URxvt.boldItalicFont: xft:JetBrains Mono:bold:italic:size=14
-URxvt.letterSpace: 1
+URxvt.font: xft:JetBrains Mono:size=14:minispace=False
+URxvt.boldFont: xft:JetBrains Mono:bold:size=14:minispace=False
+URxvt.italicFont: xft:JetBrains Mono:italic:size=14:minispace=False
+URxvt.boldItalicFont: xft:JetBrains Mono:bold:italic:size=14:minispace=False
+URxvt.letterSpace: 2
 
 URxvt.keysym.Shift-Up: command:\033]720;1\007
 URxvt.keysym.Shift-Down: command:\033]721;1\007
