@@ -4,8 +4,7 @@
 alias meg='ssh jani@meg.sch.bme.hu -4'
 alias brian='ssh jani@brian.sch.bme.hu -4'
 alias lois='ssh jani@lois.sch.bme.hu -p 35355 -4'
-
-# alias netfix='sudo ethtool -s enp0s31f6 autoneg on'
+alias stewie='ssh jani@stewie.sch.bme.hu -p 35355 -4'
 
 alias ll='ls -lh'
 alias l='ls -lha'
