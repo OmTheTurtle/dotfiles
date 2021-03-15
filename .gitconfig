@@ -22,9 +22,12 @@
 	amend = commit --amend
   sneak = commit --amend --no-edit
 	aa = add --all
+  nvm = reset --soft HEAD~1
 [pager]
 	branch = false
 [core]
 	editor = vim
 [pull]
 	rebase = true
+[init]
+	defaultBranch = master
