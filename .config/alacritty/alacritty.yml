@@ -138,7 +138,7 @@ font:
     style: Bold Italic
 
   # Point size
-  size: 12.0
+  size: 8.0
 
   # Offset is the extra space around each character. `offset.y` can be thought of
   # as modifying the line spacing, and `offset.x` as modifying the letter spacing.
@@ -338,7 +338,7 @@ shell:
 # Send ESC (\x1b) before characters when alt is pressed.
 #alt_send_esc: true
 
-mouse:
+# mouse:
   # Click settings
   #
   # The `double_click` and `triple_click` settings control the time
@@ -350,7 +350,7 @@ mouse:
   # If this is `true`, the cursor is temporarily hidden when typing.
   #hide_when_typing: false
 
-  url:
+  # url:
     # URL launcher
     #
     # This program is executed when clicking on a text which is recognized as a URL.
@@ -362,9 +362,9 @@ mouse:
     #   - (macOS) open
     #   - (Linux/BSD) xdg-open
     #   - (Windows) explorer
-    launcher:
-     program: xdg-open
-     args: []
+    # launcher:
+    #  program: xdg-open
+    #  args: []
 
     # URL modifiers
     #
@@ -538,6 +538,17 @@ key_bindings:
   #- { key: Home,      mods: Shift,   action: ScrollToTop,    mode: ~Alt       }
   #- { key: End,       mods: Shift,   action: ScrollToBottom, mode: ~Alt       }
 
+hints:
+  enabled:
+    - regex: "(magnet:|mailto:|gemini:|gopher:|https:|http:|news:|file:|git:|ssh:|ftp:)[^\u0000-\u001F\u007F-\u009F<>\"\\s{-}\\^⟨⟩`]+"
+      command: xdg-open
+      post_processing: true
+      mouse:
+        enabled: true
+        mods: Control
+      binding:
+        key: U
+        mods: Control|Shift
 #debug:
   # Display the time it takes to redraw each frame.
   #render_timer: false
