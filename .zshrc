@@ -6,11 +6,13 @@ alias brian='ssh jani@brian.sch.bme.hu -4'
 alias lois='ssh jani@lois.sch.bme.hu -p 35355 -4'
 alias stewie='ssh jani@stewie.sch.bme.hu -p 35355 -4'
 
+# alias netfix='sudo ethtool -s enp0s31f6 autoneg on'
+
 alias ll='ls -lh'
 alias l='ls -lha'
 
-alias wtr='curl wttr.in'
-alias wtr2='curl v2.wttr.in'
+alias wtr='curl wttr.in/Budapest'
+alias wtr2='curl v2.wttr.in/Budapest'
 alias ..='cd ..'
 alias mov='lf ~/Videos/Movies'
 alias ser='lf ~/Videos/Shows'
@@ -26,6 +28,8 @@ alias p='pacman'
 alias y='yarn'
 alias ys='yarn start'
 alias yd='yarn dev || yarn develop'
+
+alias atr='autorandr'
 
 # Colored `ls`
 export LS_OPTIONS='--color=auto'
@@ -87,6 +91,10 @@ SPACESHIP_PROMPT_ORDER=(
   line_sep
   char
 )
+
+bindkey "^[[1;5C" forward-word
+bindkey "^[[1;5D" backward-word
+
 
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
 export PATH="$PATH:$HOME/.rvm/bin"
