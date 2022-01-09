@@ -1,70 +1,71 @@
 {
-    "editor.fontFamily": "JetBrains Mono",
-    "editor.fontLigatures": true,
-    "nightswitch.themeDay": "Noctis Lux",
-    "nightswitch.themeNight": "Noctis Uva",
-    "nightswitch.location": "46,16",
-    "editor.tabSize": 2,
-    "window.zoomLevel": 0,
-    "terminal.integrated.rendererType": "dom",
-    "eslint.packageManager": "yarn",
-    "workbench.sideBar.location": "right",
-    "telemetry.enableCrashReporter": false,
-    "telemetry.enableTelemetry": false,
-    "window.menuBarVisibility": "toggle",
-    "files.trimTrailingWhitespace": true,
-    "editor.renderWhitespace": "boundary",
-    "eslint.alwaysShowStatus": true,
-    "[javascript]": {
-        "editor.defaultFormatter": "esbenp.prettier-vscode"
-    },
-    "[json]": {
-        "editor.defaultFormatter": "vscode.json-language-features"
-    },
-    "[html]": {
-        "editor.suggest.insertMode": "replace",
-        "editor.defaultFormatter": "vscode.html-language-features"
-    },
-    "[scss]": {
-        "editor.suggest.insertMode": "replace",
-        "editor.defaultFormatter": "vscode.css-language-features"
-    },
-    "workbench.editor.highlightModifiedTabs": true,
-    "editor.cursorStyle": "line-thin",
-    "editor.multiCursorModifier": "ctrlCmd",
-    "editor.mouseWheelZoom": false,
-    "editor.renderLineHighlight": "gutter",
-    "markdown-pdf.displayHeaderFooter": false,
-    "diffEditor.ignoreTrimWhitespace": false,
-    "editor.suggestSelection": "first",
-    "files.exclude": {
-        "**/.classpath": true,
-        "**/.project": true,
-        "**/.settings": true,
-        "**/.factorypath": true
-    },
-    "svelte.language-server.runtime": "/usr/local/bin/node",
-    "[typescriptreact]": {
-        "editor.defaultFormatter": "esbenp.prettier-vscode"
-    },
-    "[typescript]": {
-        "editor.defaultFormatter": "vscode.typescript-language-features"
-    },
-    "workbench.iconTheme": "material-icon-theme",
-    "editor.defaultFormatter": "vscode.typescript-language-features",
-    "prettier.jsxSingleQuote": true,
-    "prettier.singleQuote": true,
-    "prettier.semi": false,
-    "javascript.format.semicolons": "remove",
-    "typescript.format.semicolons": "remove",
-    "javascript.preferences.quoteStyle": "single",
-    "typescript.preferences.quoteStyle": "single",
-    "javascript.updateImportsOnFileMove.enabled": "always",
-    "typescript.updateImportsOnFileMove.enabled": "always",
-    "terminal.integrated.shell.linux": "/usr/bin/zsh",
-    "editor.smoothScrolling": true,
-    "latex-workshop.view.pdf.viewer": "tab",
-    "workbench.colorTheme": "Noctis Uva",
-    "editor.formatOnPaste": true,
-    "editor.formatOnSave": true
+  "editor.fontFamily": "JetBrains Mono",
+  "editor.fontLigatures": true,
+  "nightswitch.themeDay": "Noctis Lux",
+  "nightswitch.themeNight": "Noctis Uva",
+  "nightswitch.location": "46,16",
+  "editor.tabSize": 2,
+  "eslint.packageManager": "yarn",
+  "telemetry.telemetryLevel": "off",
+  "workbench.sideBar.location": "right",
+  "window.menuBarVisibility": "toggle",
+  "files.trimTrailingWhitespace": true,
+  "editor.renderWhitespace": "boundary",
+  "eslint.alwaysShowStatus": true,
+  "json.schemas": [
+    {
+      "fileMatch": ["cypress.json"],
+      "url": "https://on.cypress.io/cypress.schema.json"
+    }
+  ],
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[json]": {
+    "editor.defaultFormatter": "vscode.json-language-features"
+  },
+  "[html]": {
+    "editor.suggest.insertMode": "replace",
+    "editor.defaultFormatter": "vscode.html-language-features"
+  },
+  "[scss]": {
+    "editor.suggest.insertMode": "replace",
+    "editor.defaultFormatter": "vscode.css-language-features"
+  },
+  "workbench.editor.highlightModifiedTabs": true,
+  "editor.cursorStyle": "line-thin",
+  "editor.multiCursorModifier": "ctrlCmd",
+  "editor.mouseWheelZoom": false,
+  "editor.renderLineHighlight": "gutter",
+  "markdown-pdf.displayHeaderFooter": false,
+  "diffEditor.ignoreTrimWhitespace": false,
+  "editor.suggestSelection": "first",
+  "files.exclude": {
+    "**/.classpath": true,
+    "**/.project": true,
+    "**/.settings": true,
+    "**/.factorypath": true
+  },
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[typescript]": {
+    "editor.defaultFormatter": "vscode.typescript-language-features"
+  },
+  "workbench.iconTheme": "material-icon-theme",
+  "editor.defaultFormatter": "vscode.typescript-language-features",
+  "javascript.updateImportsOnFileMove.enabled": "always",
+  "typescript.updateImportsOnFileMove.enabled": "always",
+  "terminal.integrated.profiles.linux": {
+    "zsh (login)": {
+      "path": "zsh",
+      "args": ["-l"]
+    }
+  },
+  "editor.smoothScrolling": true,
+  "latex-workshop.view.pdf.viewer": "tab",
+  "workbench.colorTheme": "Noctis Uva",
+  "editor.formatOnPaste": true,
+  "disableLigatures.mode": "Line",
+  "window.zoomLevel": 1
 }
